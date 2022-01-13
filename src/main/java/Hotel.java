@@ -5,6 +5,8 @@ public class Hotel {
     private ArrayList<Bedroom> bedrooms;
     private ArrayList<ConferenceRoom> conferenceRooms;
     private Bedroom theBedroom;
+    private Booking booking;
+
 
     public Hotel(ArrayList<Bedroom> bedrooms, ArrayList<ConferenceRoom> conferenceRooms){
         this.bedrooms = bedrooms;

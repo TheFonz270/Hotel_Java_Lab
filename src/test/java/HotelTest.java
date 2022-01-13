@@ -14,6 +14,7 @@ public class HotelTest {
     private ArrayList<ConferenceRoom> cRooms;
     private ArrayList<Guest> uncheckedGuests;
     private Hotel cct;
+    private Booking booking;
 
 
     @Before
@@ -28,6 +29,7 @@ public class HotelTest {
         cRooms.add(cRoom);
         bedrooms.add(bedroom);
         cct = new Hotel(bedrooms, cRooms);
+        booking = new Booking(bedroom, 5);
     }
 
     @Test
