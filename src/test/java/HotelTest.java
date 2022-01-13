@@ -54,7 +54,7 @@ public class HotelTest {
 
     @Test
     public void canGetRoomOfType() {
-        assertEquals(cct.getRoomOfType(RoomType.SINGLE), bedroom);
+        assertEquals(cct.getRoomOfType(RoomType.SINGLE), bedroom1);
     }
 
     @Test

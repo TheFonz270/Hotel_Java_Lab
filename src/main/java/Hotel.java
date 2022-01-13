@@ -8,6 +8,7 @@ public class Hotel {
     private Bedroom theBedroom;
     private Booking booking;
     private HashMap<String, DiningRoom> diningRooms;
+    private ArrayList<Bedroom> emptyBedrooms;
 
 
     public Hotel(ArrayList<Bedroom> bedrooms, ArrayList<ConferenceRoom> conferenceRooms, HashMap<String, DiningRoom> diningRooms){
