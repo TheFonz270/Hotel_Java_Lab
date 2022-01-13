@@ -14,11 +14,12 @@ public class Hotel {
         this.bedrooms = bedrooms;
         this.conferenceRooms = conferenceRooms;
         this.diningRooms = diningRooms;
+        this.emptyBedrooms = new ArrayList<>();
     }
 
     public Room getRoomOfType(RoomType roomType) {
-
-        for (Bedroom room : bedrooms) {
+        this.getVacantRooms();
+        for (Bedroom room : emptyBedrooms) {
             if (room.getRoomType().equals(roomType)) {
                 return room;
             }
@@ -57,4 +58,15 @@ public class Hotel {
     public DiningRoom getDiningRoom(String name) {
         return diningRooms.get(name);
     }
+
+    public ArrayList<Bedroom> getVacantRooms() {
+        emptyBedrooms.clear();
+        for (Bedroom room : bedrooms) {
+            if (room.getGuestNumber() == 0) {
+                emptyBedrooms.add(room);
+            }
+        }
+        return emptyBedrooms;
+    }
+
 }
