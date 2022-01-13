@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Hotel {
 
@@ -6,11 +7,13 @@ public class Hotel {
     private ArrayList<ConferenceRoom> conferenceRooms;
     private Bedroom theBedroom;
     private Booking booking;
+    private HashMap<String, DiningRoom> diningRooms;
 
 
-    public Hotel(ArrayList<Bedroom> bedrooms, ArrayList<ConferenceRoom> conferenceRooms){
+    public Hotel(ArrayList<Bedroom> bedrooms, ArrayList<ConferenceRoom> conferenceRooms, HashMap<String, DiningRoom> diningRooms){
         this.bedrooms = bedrooms;
         this.conferenceRooms = conferenceRooms;
+        this.diningRooms = diningRooms;
     }
 
     public Room getRoomOfType(RoomType roomType) {

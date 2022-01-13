@@ -29,6 +29,7 @@ public class BedroomTest {
 
     @Test
     public void bedroomHasGuest(){
+        bedroom.setGuests(guests);
         assertEquals("Jesse", bedroom.getGuestName(0));
     }
 }

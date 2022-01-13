@@ -27,13 +27,20 @@ public class HotelTest {
         guest1 = new Guest("Jesse");
         uncheckedGuests = new ArrayList<>();
         uncheckedGuests.add(guest1);
-        bedroom = new Bedroom(1, RoomType.SINGLE, 7 );
+        bedroom = new Bedroom(1, RoomType.SINGLE, 7, 45.00 );
         cRoom = new ConferenceRoom(50, "Orkney");
         bedrooms = new ArrayList<>();
         cRooms = new ArrayList<>();
         cRooms.add(cRoom);
         bedrooms.add(bedroom);
-        cct = new Hotel(bedrooms, cRooms);
+        laChambre = new DiningRoom("La Chambre", 20);
+        laSalleAManger = new DiningRoom("La Salle a Manger", 50);
+        laCuisine = new DiningRoom("La Cuisine", 15);
+        diningRooms = new HashMap<>();
+        diningRooms.put("La Chambre", laChambre);
+        diningRooms.put("La Salle a Manger", laSalleAManger);
+        diningRooms.put("La Cuisine", laCuisine);
+        cct = new Hotel(bedrooms, cRooms, diningRooms);
         booking = new Booking(bedroom, 5);
     }
 
