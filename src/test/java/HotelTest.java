@@ -49,4 +49,11 @@ public class HotelTest {
         assertEquals(0, bedroom.getGuestNumber());
     }
 
+    @Test
+    public void canBookRoom(){
+        Booking booking1 = cct.bookRoom(RoomType.SINGLE, 6);
+        assertEquals(booking1.getBedroomBooked().getRoomNumber() , 7);
+        assertEquals(booking1.getNightsBooked(), 6);
+    }
+
 }

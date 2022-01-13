@@ -43,4 +43,10 @@ public class Hotel {
         theBedroom = (Bedroom) this.getRoomByNumber(roomNumber);
         theBedroom.guests.clear();
     }
+
+    public Booking bookRoom(RoomType roomType, int nights){
+        theBedroom = (Bedroom) this.getRoomOfType(roomType);
+        booking = new Booking(theBedroom, nights);
+        return booking;
+    }
 }

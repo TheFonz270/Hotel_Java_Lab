@@ -28,6 +28,6 @@ public class BedroomTest {
 
     @Test
     public void bedroomHasGuest(){
-        assertEquals("Jesse", bedroom.getGuest(0));
+        assertEquals("Jesse", bedroom.getGuestName(0));
     }
 }
