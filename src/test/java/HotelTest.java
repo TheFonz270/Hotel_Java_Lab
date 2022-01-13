@@ -3,6 +3,8 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
+import static org.junit.Assert.assertEquals;
+
 public class HotelTest {
 
     private Guest guest1;
@@ -10,7 +12,7 @@ public class HotelTest {
     private ConferenceRoom cRoom;
     private ArrayList<Bedroom> bedrooms;
     private ArrayList<ConferenceRoom> cRooms;
-    private ArrayList uncheckedGuests;
+    private ArrayList<Guest> uncheckedGuests;
     private Hotel cct;
 
 
@@ -21,8 +23,8 @@ public class HotelTest {
         uncheckedGuests.add(guest1);
         bedroom = new Bedroom(1, RoomType.SINGLE, 7 );
         cRoom = new ConferenceRoom(50, "Orkney");
-        bedrooms = new ArrayList<Bedroom>();
-        cRooms = new ArrayList<ConferenceRoom>();
+        bedrooms = new ArrayList<>();
+        cRooms = new ArrayList<>();
         cRooms.add(cRoom);
         bedrooms.add(bedroom);
         cct = new Hotel(bedrooms, cRooms);
@@ -30,7 +32,8 @@ public class HotelTest {
 
     @Test
     public void canCheckInSingle(){
-    cct.checkIn();
+    cct.checkIn(uncheckedGuests, RoomType.SINGLE );
+    assertEquals(bedroom.getGuest(0).getName(), "Jesse");
     }
 
 }

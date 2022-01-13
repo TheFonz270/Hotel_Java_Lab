@@ -7,7 +7,7 @@ public abstract class Room {
 
     public Room(int capacity) {
         this.capacity = capacity;
-        this.guests = new ArrayList<Guest>();
+        this.guests = new ArrayList<>();
     }
 
     public int getCapacity() {
@@ -20,6 +20,10 @@ public abstract class Room {
 
     public ArrayList<Guest> getGuests() {
         return guests;
+    }
+
+    public Guest getGuest(int index) {
+        return guests.get(index);
     }
 
     public void setGuests(ArrayList<Guest> guests) {

@@ -4,6 +4,7 @@ public class Hotel {
 
     private ArrayList<Bedroom> bedrooms;
     private ArrayList<ConferenceRoom> conferenceRooms;
+    private Bedroom theBedroom;
 
     public Hotel(ArrayList<Bedroom> bedrooms, ArrayList<ConferenceRoom> conferenceRooms){
         this.bedrooms = bedrooms;
@@ -14,10 +15,23 @@ public class Hotel {
 
     }
 
-    public void checkIn(ArrayList<Guest> guests, Room room){
-        for (Guest guest : guests) {
-        room.getGuests().add(guest);
+    public void checkIn(ArrayList<Guest> uncheckedGuests, RoomType roomType){
+
+        for (Guest guest : uncheckedGuests) {
+            this.getRoomOfType(roomType).getGuests().add(guest);
+
     }}
+
+    public Room getRoomByNumber(int roomNumber) {
+
+        for (Bedroom room : bedrooms) {
+            if (room.getRoomNumber() == roomNumber) {
+                return room;
+            }
+        }
+        return null;
+    }
+    
 
     public void checkout() {
 
