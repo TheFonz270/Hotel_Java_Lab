@@ -32,6 +32,7 @@ public class ConferenceRoomTest {
 
     @Test
     public void canCheckGuestsNumber() {
+        conferenceRoom.setGuests(guests);
         assertEquals(1, conferenceRoom.getGuestNumber());
     }
 }

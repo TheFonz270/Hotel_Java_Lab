@@ -15,4 +15,8 @@ public class Booking {
     public int getNightsBooked() {
         return nightsBooked;
     }
+
+    public double getBill(){
+        return this.nightsBooked * this.bedroomBooked.getNightlyRate();
+    }
 }

@@ -27,7 +27,6 @@ public class Hotel {
 
         for (Guest guest : uncheckedGuests) {
             this.getRoomOfType(roomType).getGuests().add(guest);
-
     }}
 
     public Room getRoomByNumber(int roomNumber) {
@@ -50,5 +49,9 @@ public class Hotel {
         theBedroom = (Bedroom) this.getRoomOfType(roomType);
         booking = new Booking(theBedroom, nights);
         return booking;
+    }
+
+    public DiningRoom getDiningRoom(String name) {
+        return diningRooms.get(name);
     }
 }
