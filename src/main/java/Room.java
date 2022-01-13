@@ -30,7 +30,7 @@ public abstract class Room {
         this.guests = guests;
     }
 
-    public String GetGuest(int index) {
+    public String getGuestName(int index) {
         return guests.get(index).getName();
     }
 

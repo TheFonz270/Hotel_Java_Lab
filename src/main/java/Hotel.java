@@ -11,8 +11,14 @@ public class Hotel {
         this.conferenceRooms = conferenceRooms;
     }
 
-    public void getRoomOfType(RoomType roomType) {
+    public Room getRoomOfType(RoomType roomType) {
 
+        for (Bedroom room : bedrooms) {
+            if (room.getRoomType().equals(roomType)) {
+                return room;
+            }
+    }
+        return null;
     }
 
     public void checkIn(ArrayList<Guest> uncheckedGuests, RoomType roomType){
@@ -33,8 +39,8 @@ public class Hotel {
     }
     
 
-    public void checkout() {
-
+    public void checkOut(int roomNumber) {
+        theBedroom = (Bedroom) this.getRoomByNumber(roomNumber);
+        theBedroom.guests.clear();
     }
-
 }

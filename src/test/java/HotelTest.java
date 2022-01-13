@@ -31,9 +31,22 @@ public class HotelTest {
     }
 
     @Test
+    public void canGetRoomOfType() {
+        assertEquals(cct.getRoomOfType(RoomType.SINGLE), bedroom);
+    }
+
+    @Test
     public void canCheckInSingle(){
     cct.checkIn(uncheckedGuests, RoomType.SINGLE );
     assertEquals(bedroom.getGuest(0).getName(), "Jesse");
+    }
+
+    @Test
+    public void canCheckOutGuests() {
+        cct.checkIn(uncheckedGuests, RoomType.SINGLE);
+        assertEquals(1, bedroom.getGuestNumber());
+        cct.checkOut(7);
+        assertEquals(0, bedroom.getGuestNumber());
     }
 
 }

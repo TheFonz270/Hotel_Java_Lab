@@ -28,6 +28,6 @@ public class BedroomTest {
 
     @Test
     public void bedroomHasGuest(){
-        assertEquals("Jesse", bedroom.GetGuest(0));
+        assertEquals("Jesse", bedroom.getGuest(0));
     }
 }
